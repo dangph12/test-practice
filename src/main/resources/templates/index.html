@@ -60,6 +60,7 @@
     <h2>Swell Store Commission Calculator</h2>
 
     <!-- Dropdown for products -->
+    <form method="post" action="calc">
     <label for="product">Product Type</label>
     <select id="product">
         <option value="standard">Standard</option>
@@ -86,8 +87,8 @@
     <input type="number" id="amount" placeholder="Enter the amount of the item" />
 
     <!-- Button to calculate commission -->
-    <button onclick="calculateCommission()">Calculate Commission</button>
-
+    <input type="submit" value="Submit">
+    </form>
     <!-- Display the result -->
     <div class="result" id="result">Commission: $0</div>
 </div>
