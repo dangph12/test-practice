@@ -16,7 +16,7 @@ public class CommissionController {
     @PostMapping("")
     public String calculateCommission(@ModelAttribute Order order, Model model){
         CommissionService commissionService = new CommissionService();
-        int commission = commissionService.calculateCommission(order);
+        int commission = commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount());
         model.addAttribute("order", order);
         model.addAttribute("commission", commission);
         return "index";

@@ -90,7 +90,9 @@
     <input type="submit" value="Submit">
     </form>
     <!-- Display the result -->
-    <div class="result" id="result" th:text="${commission}">Commission: $[0]</div>
+    <span>
+        Commission: <div class="result" id="result" th:text="${commission}">[Commission]</div>
+    </span>
 </div>
 </body>
 </html>

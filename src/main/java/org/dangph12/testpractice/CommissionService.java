@@ -1,11 +1,7 @@
 package org.dangph12.testpractice;
 
 public class CommissionService {
-    public int calculateCommission(Order order) {
-        String product = order.getProduct();
-        String customer = order.getCustomer();
-        String employee = order.getEmployee();
-        int amount = order.getAmount();
+    public int calculateCommission(String product, String customer, String employee, int amount) {
         if (product.equalsIgnoreCase("standard") || customer.equalsIgnoreCase("regulars")) {
             return 0;
         }
@@ -18,7 +14,7 @@ public class CommissionService {
             }
         }
 
-        if (employee.equalsIgnoreCase("salaried")) {
+        if (employee.equalsIgnoreCase("non-salaried")) {
             if (customer.equalsIgnoreCase("one-time")) {
                 if (product.equalsIgnoreCase("high-end")) {
                     if (amount >= 1000) {
