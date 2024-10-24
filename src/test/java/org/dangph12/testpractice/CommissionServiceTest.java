@@ -10,14 +10,14 @@ class CommissionServiceTest {
 
     @Test
     void testCase1() {
-        Order order = new Order("standard", "regulars", "salaried", 100);
+        Order order = new Order("standard", "regulars", "salaried", 1001);
         int expectedCommission = 0;
         assertEquals(expectedCommission, commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount()));
     }
 
     @Test
     void testCase2() {
-        Order order = new Order("middle", "regulars", "salaried", 100);
+        Order order = new Order("middle", "regulars", "salaried", 1001);
         int expectedCommission = 0;
         assertEquals(expectedCommission, commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount()));
     }
@@ -31,7 +31,7 @@ class CommissionServiceTest {
 
     @Test
     void testCase4() {
-        Order order = new Order("high-end", "one-time", "salaried", 100);
+        Order order = new Order("high-end", "one-time", "salaried", 1001);
         int expectedCommission = 25;
         assertEquals(expectedCommission, commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount()));
     }
@@ -45,7 +45,7 @@ class CommissionServiceTest {
 
     @Test
     void testCase6() {
-        Order order = new Order("high-end", "one-time", "non-salaried", 100);
+        Order order = new Order("high-end", "one-time", "non-salaried", 1001);
         int expectedCommission = 75;
         assertEquals(expectedCommission, commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount()));
     }
@@ -59,8 +59,8 @@ class CommissionServiceTest {
 
     @Test
     void testCase8() {
-        Order order = new Order("middle", "one-time", "non-salaried", 1000);
-        int expectedCommission = 50;
+        Order order = new Order("middle", "one-time", "non-salaried", 10001);
+        int expectedCommission = 500;
         assertEquals(expectedCommission, commissionService.calculateCommission(order.getProduct(), order.getCustomer(), order.getEmployee(), order.getAmount()));
     }
 
